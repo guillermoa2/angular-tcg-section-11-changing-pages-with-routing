@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Params } from '@angular/router';
+import { ActivatedRoute, Params, Router } from '@angular/router';
 
 import { ServersService } from '../servers.service';
 
@@ -12,7 +12,8 @@ export class ServerComponent implements OnInit {
   server: {id: number, name: string, status: string};
 
   constructor(private serversService: ServersService,
-              private route: ActivatedRoute) { }
+              private route: ActivatedRoute,
+              private router: Router) { }
 
   ngOnInit() {
     // plus sign converts string to number ex. '1' to 1
@@ -24,6 +25,11 @@ export class ServerComponent implements OnInit {
           this.server = this.serversService.getServer(+params['id']);
         }
       )
+  }
+
+  onEdit() {
+    this.router.navigate(['edit'], {relativeTo: this.route});
+
   }
 
 }
