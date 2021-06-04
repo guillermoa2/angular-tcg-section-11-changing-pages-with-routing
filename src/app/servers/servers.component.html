@@ -13,11 +13,13 @@
     </div>
   </div>
   <div class="col-xs-12 col-sm-4">
-    <button class="btn btn-primary" (click)="onReload()">Reload Page</button>
+    <!-- /servers child routes loaded below -->
+    <router-outlet></router-outlet>
+    <!-- <button class="btn btn-primary" (click)="onReload()">Reload Page</button>
     <app-edit-server></app-edit-server>
     <hr>
-    <!-- error nested child router needs to be here. In future video  -->
-    <!-- <app-server></app-server> -->
+    error nested child router needs to be here. In future video 
+    <app-server></app-server> -->
   </div>
 </div>
 
