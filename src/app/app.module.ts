@@ -25,7 +25,7 @@ const appRoutes: Routes = [
   ] },
   { path: 'not-found', component: PageNotFoundComponent },
   // path below catches all unknown routes, ALWAYS leave this line last in Routes
-  { path: '**', redirectTo: 'not-found'}
+  { path: '**', redirectTo: '/not-found'}
 ];
 
 @NgModule({
