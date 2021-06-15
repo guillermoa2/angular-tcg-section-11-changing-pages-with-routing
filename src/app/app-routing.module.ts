@@ -35,7 +35,12 @@ const appRoutes: Routes = [
 
 @NgModule({
     imports: [
+        /* if your server, the server hosting your app decides no, I don't know the route,here's your 404 error page.
+        Therefore you need to make sure that in such a case, your web server returns the index.html file.
+        If for some reason, you can't get this to work or you need to support very old browsers which are not able to parse paths like this in the client which Angular does then, you have an alternative approach to using this */
+        // RouterModule.forRoot(appRoutes, {useHash: true})
         RouterModule.forRoot(appRoutes)
+
     ],
     exports: [RouterModule]
 })
